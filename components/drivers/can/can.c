@@ -921,10 +921,10 @@ int cmd_canstat(int argc, void **argv)
         rt_device_t candev = rt_device_find(argv[1]);
         if (!candev)
         {
-            rt_kprintf(" Can't find can device %s\n", argv[1]);
+            rt_kprintf(" Can't find CAN device %s\n", argv[1]);
             return -1;
         }
-        rt_kprintf(" Finded can device: %s...", argv[1]);
+        rt_kprintf(" Found CAN device: %s...", argv[1]);
 
         rt_device_control(candev, RT_CAN_CMD_GET_STATUS, &status);
         rt_kprintf("\n Receive...error..count: %010ld. Send.....error....count: %010ld.",
